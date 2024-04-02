@@ -1,0 +1,12 @@
+# Ignore node_modules directory
+node_modules
+
+# Ignore any npm debug logs
+npm-debug.log
+
+# Ignore any build artifacts
+dist
+
+# Ignore any files related to version control
+.git
+.gitignore
