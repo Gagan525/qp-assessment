@@ -17,7 +17,7 @@ RUN npm install -g prisma
 COPY . .
 
 # Copy example.env to .env
-COPY example.env .env
+# COPY example.env .env
 
 # Build TypeScript files
 RUN npm run build
