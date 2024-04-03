@@ -23,7 +23,7 @@ export const addGroceryItem = async (req: Request, res: Response) => {
     });
 
     res.status(201).json({ message: 'Grocery item added successfully', groceryItem });
-  } catch (error: any) {
+  } catch (error) {
     console.error('Error adding grocery item:', error);
     res.status(500).json({ message: 'Failed to add grocery item' });
   }
@@ -34,7 +34,7 @@ export const viewGroceryItems = async (req: Request, res: Response) => {
   try {
     const groceryItems = await prisma.groceryItem.findMany();
     res.json({ groceryItems });
-  } catch (error: any) {
+  } catch (error) {
     console.error('Error viewing grocery items:', error);
     res.status(500).json({ message: 'Failed to view grocery items' });
   }
@@ -53,7 +53,7 @@ export const removeGroceryItem = async (req: Request, res: Response) => {
     });
 
     res.json({ message: 'Grocery item removed successfully' });
-  } catch (error: any) {
+  } catch (error) {
     console.error('Error removing grocery item:', error);
     res.status(500).json({ message: 'Failed to remove grocery item' });
   }
@@ -83,7 +83,7 @@ export const updateGroceryItem = async (req: Request, res: Response) => {
     });
 
     res.json({ message: 'Grocery item updated successfully', updatedGroceryItem });
-  } catch (error:any) {
+  } catch (error) {
     console.error('Error updating grocery item:', error);
     res.status(500).json({ message: 'Failed to update grocery item' });
   }
@@ -112,7 +112,7 @@ export const manageInventory = async (req: Request, res: Response) => {
     });
 
     res.json({ message: 'Inventory updated successfully', updatedGroceryItem });
-  } catch (error:any) {
+  } catch (error) {
     console.error('Error managing inventory:', error);
     res.status(500).json({ message: 'Failed to manage inventory'});
   }
